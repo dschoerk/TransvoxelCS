@@ -7,9 +7,9 @@ namespace VoxelStuff
 {
     public class SurfaceExtractor
     {
-        public static void extract(VoxelMap data, out List<Vector3f> vert, out List<int> indizes, int lod,bool reuse)
+        public static void extract(VoxelMap data, out List<Vector3f> vertices, out List<int> indizes, int lod,bool reuse)
         {
-            vert = new List<Vector3f>();
+            vertices = new List<Vector3f>();
             indizes = new List<int>();
 
             int cellCnt = data.getSize();
@@ -21,10 +21,10 @@ namespace VoxelStuff
                     {
                         Cell c = new Cell(data, new Vector3i(xx, yy, zz));
                         cells[xx / lod, yy / lod, zz / lod] = c;
-                        c.build(vert, indizes, cells, lod, reuse);
+                        c.build(vertices, indizes, cells, lod, reuse);
                     }
 
-            Console.WriteLine("VertexCount: " + vert.Count + " TriCount: " + indizes.Count / 3);
+            Console.WriteLine("VertexCount: " + vertices.Count + " TriCount: " + indizes.Count / 3);
         }
     }
 }
