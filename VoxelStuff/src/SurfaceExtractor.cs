@@ -7,7 +7,7 @@ namespace VoxelStuff
 {
     public class SurfaceExtractor
     {
-        public static void extract(VoxelMap data, out List<Vector3f> vertices, out List<int> indizes, int lod,bool reuse)
+        public static void extract(oxelMap data, out List<Vector3f> vertices, out List<int> indizes, int lod,bool reuse)
         {
             vertices = new List<Vector3f>();
             indizes = new List<int>();
